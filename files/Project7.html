@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Showcase</title>
     <style>
+        
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
@@ -12,60 +13,103 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             min-height: 100vh;
             background-color: #121212;
             color: #f4f4f4;
             transition: background 0.3s ease, color 0.3s ease;
-            flex-direction: column;
         }
 
         /* Container */
-        .container1 {
-            max-width: 1000px;
+        .container {
+            max-width: 800px;
             width: 100%;
             background: #1e1e1e;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
             text-align: left;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Project Title */
-        .project-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 15px;
-            text-align: center;
         }
 
         /* Project Image Gallery */
         .image-gallery {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             gap: 10px;
-            margin-top: 20px;
-            width: 100%;
-            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .image-gallery img {
-            width: 48%;
+            width: 32%;
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
         }
 
-        /* Project Description */
+        /* Responsive: Stack images on small screens */
+        @media (max-width: 600px) {
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-gallery img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Project Details */
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
         .project-description {
             font-size: 16px;
             margin: 10px 0;
-            text-align: center;
             padding: 0 10px;
+        }
+
+        .project-meta {
+            font-size: 14px;
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .prev-btn {
+            background: #444;
+            color: white;
+        }
+
+        .next-btn {
+            background: #1E88E5;
+            color: white;
+        }
+
+        .prev-btn:hover {
+            background: #666;
+        }
+
+        .next-btn:hover {
+            background: #0b7dda;
         }
 
         /* Dark Mode Toggle Button */
@@ -119,32 +163,23 @@
             color: #121212;
         }
 
-        .light-mode .container1 {
+        .light-mode .container {
             background: white;
             color: black;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Mobile Responsiveness */
-        @media screen and (max-width: 768px) {
-            .image-gallery img {
-                width: 100%;
-                height: 150px;
-                margin-bottom: 10px;
-            }
+        .light-mode .prev-btn {
+            background: #ccc;
+            color: black;
+        }
 
-            .container1 {
-                padding: 15px;
-                width: 100%;
-            }
+        .light-mode .next-btn {
+            background: #2196F3;
+        }
 
-            .project-title {
-                font-size: 20px;
-            }
-
-            .project-description {
-                font-size: 14px;
-            }
+        .light-mode .prev-btn:hover {
+            background: #999;
         }
 
     </style>
@@ -153,94 +188,53 @@
 
     <!-- Dark Mode Toggle Switch -->
     <div class="toggle-switch">
-        <input type="checkbox" id="darkModeToggle">
+        <input type="checkbox" id="darkModeToggle" checked>
         <label for="darkModeToggle"></label>
     </div>
 
     <!-- Project Container -->
-    <div class="container1">
+    <div class="container">
         
-        <!-- Project 1 -->
-        <div class="project">
-            <div class="project-title">30A Home Automation with ESP32 </div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/HA1.png" alt="Project Image 1">
-                <img src="./img1/EMBERDED/HA2.png" alt="Project Image 2">
-            </div>
-            <div class="project-description">A high-power home automation system using ESP32, enabling remote control and monitoring of electrical appliances.</div>
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="./img1/load1.jpg" alt="Project Image 1">
+            <img src="./img1/load2.jpg" alt="Project Image 2">
+            <img src="./img1/load3.jpg" alt="Project Image 3">
         </div>
 
-        <!-- Project 2 -->
-        <div class="project">
-            <div class="project-title">Motor Driver with DRV8833</div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/M.Driver1.png" alt="Project Image 3">
-                <img src="./img1/EMBERDED/M.Driver2.png" alt="Project Image 4">
-            </div>
-            <div class="project-description">A compact dual H-bridge motor driver for controlling DC motors efficiently, suitable for robotics and automation projects.</div>
-        </div>
+        <div class="project-title">High-Power Programmable Electronic Load (300W)</div>
+        <div class="project-description">
+            <br>
+            📌 Project Overview <br>
+            <br>
+This programmable electronic load is designed for high-power applications, capable of handling up to 300W power dissipation with a maximum of 8A and 50V while maintaining efficiency and precision. The system offers multiple operating modes, making it suitable for testing power supplies, batteries, and other electrical components. It features remote voltage sensing, an intuitive input interface using an encoder and keypad, and five advanced operational modes for versatile performance.
+<br>
+🛠️ Key Features & Capabilities <br>
+<br>
+✅ 🔌 Power Handling – Supports up to 8A and 50V, ensuring compliance with the 300W power dissipation limit. <br>
+✅ 📡 Remote Voltage Sensing – Allows accurate voltage measurement, compensating for cable losses. <br>
+✅ 🎛️ Intuitive Control – Easily input values using either a rotary encoder or a keypad for precise adjustments. <br>
+✅ 📟 Multiple Operating Modes – Ensures flexibility in different applications. <br>
+<br>
+🚀 5 Modes of Operation <br>
+<br>
+🔹 Constant Current Mode (CC) – Maintains a steady current, regardless of voltage fluctuations. <br>
+🔹 Constant Power Mode (CP) – Regulates power dissipation to protect components under test. <br>
+🔹 Constant Resistance Mode (CR) – Simulates a fixed resistance load for circuit analysis. <br>
+🔹 Transient Response Mode – Tests dynamic response of power supplies by applying varying loads. <br>
+🔹 Battery Testing Mode – Evaluates battery performance, capacity, and discharge characteristics. <br>
+<br>
+This high-performance electronic load is ideal for power electronics testing, R&D, and industrial applications, ensuring accurate and reliable results in demanding environments.
+                   </div>
+        <div class="project-meta"><strong>Date:</strong> March 10, 2025</div>
+        <div class="project-meta"><strong>Location:</strong> Colombo, Sri Lanka</div>
 
-        <!-- Project 3 -->
-        <div class="project">
-            <div class="project-title">DC to DC Boost Converter</div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/DC to DC1.png " alt="Project Image 5">
-                <img src="./img1/EMBERDED/DC to DC2.png" alt="Project Image 6">
-            </div>
-            <div class="project-description">A voltage step-up converter using the XL6009 chip, designed to boost low voltage inputs to higher levels efficiently.</div>
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev-btn" onclick="goToPreviousPage()">← Previous</button>
+            <button class="nav-btn next-btn" onclick="goToNextPage()">Next →</button>
         </div>
-
-        <!-- Project 4 -->
-        <div class="project">
-            <div class="project-title">USB to UART Converter</div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/USBTOUART1.png" alt="Project Image 7">
-                <img src="./img1/EMBERDED/USBTOUART2.png" alt="Project Image 8">
-            </div>
-            <div class="project-description">A reliable USB-to-serial converter for programming and debugging microcontrollers and embedded systems.</div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project">
-            <div class="project-title">DC Motor Speed Conroller</div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/CONTROLLER1.png" alt="Project Image 9">
-                <img src="./img1/EMBERDED/CONTROLLER2.png" alt="Project Image 10">
-            </div>
-            <div class="project-description">A simple and efficient PWM-based motor speed controller using the NE555 timer IC for precise speed adjustment.</div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project">
-            <div class="project-title">Servo Testing System</div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/Testing System 1.png" alt="Project Image 11">
-                <img src="./img1/EMBERDED/Testing System 2.png" alt="Project Image 12">
-            </div>
-            <div class="project-description">A compact servo motor tester using the NE555 timer to generate PWM signals for testing servo motors.</div>
-        </div>
-
-        <!-- Project 7 -->
-        <div class="project">
-            <div class="project-title">Transformerless power supply</div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/Transformerless PS1.png" alt="Project Image 13">
-                <img src="./img1/EMBERDED/Transformerless PS2.png" alt="Project Image 14">
-            </div>
-            <div class="project-description">A lightweight and cost-effective power supply circuit using LM7805, designed for low-power electronic applications.</div>
-        </div>
-
-        <!-- Project 8 -->
-        <div class="project">
-            <div class="project-title">12v Ac To Dc Converter</div>
-            <div class="image-gallery">
-                <img src="./img1/EMBERDED/actodc1.png" alt="Project Image 15">
-                <img src="./img1/EMBERDED/actodc2.png" alt="Project Image 16">
-            </div>
-            <div class="project-description">A power conversion circuit that efficiently converts 12V AC input to a stable DC output for powering electronic devices.</div>
-        </div>
-
-   </div>
+    </div>
 
     <script>
         // Dark Mode Toggle Functionality
@@ -248,6 +242,15 @@
         toggleSwitch.addEventListener("change", () => {
             document.body.classList.toggle("light-mode");
         });
+
+        // Navigation Functions (Update with actual URLs)
+        function goToPreviousPage() {
+            window.location.href = "./files/project1.html"; // Change to actual previous page URL
+        }
+
+        function goToNextPage() {
+            window.location.href = "./files/project3.html"; // Change to actual next page URL
+        }
     </script>
 
 </body>
