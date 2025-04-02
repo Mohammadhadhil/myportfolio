@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #121212;
+            color: #f4f4f4;
+            transition: background 0.3s ease, color 0.3s ease;
+            flex-direction: column;
+        }
+
+        /* Container */
+        .container1 {
+            max-width: 1000px;
+            width: 100%;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            text-align: left;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Project Title */
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Project Image Gallery */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 48%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Project Description */
+        .project-description {
+            font-size: 16px;
+            margin: 10px 0;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        /* Dark Mode Toggle Button */
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-switch label {
+            width: 50px;
+            height: 24px;
+            background: #2196F3;
+            border-radius: 20px;
+            position: relative;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .toggle-switch label::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 3px;
+            transition: 0.3s;
+        }
+
+        .toggle-switch input:checked + label {
+            background: #ddd;
+        }
+
+        .toggle-switch input:checked + label::before {
+            transform: translateX(26px);
+            background: #333;
+        }
+
+        /* Light Mode */
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #121212;
+        }
+
+        .light-mode .container1 {
+            background: white;
+            color: black;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .image-gallery img {
+                width: 100%;
+                height: 150px;
+                margin-bottom: 10px;
+            }
+
+            .container1 {
+                padding: 15px;
+                width: 100%;
+            }
+
+            .project-title {
+                font-size: 20px;
+            }
+
+            .project-description {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+<body class="dark-mode">
+
+    <!-- Dark Mode Toggle Switch -->
+    <div class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle"></label>
+    </div>
+
+    <!-- Project Container -->
+    <div class="container1">
+        
+        <!-- Project 1 -->
+        <div class="project">
+            <div class="project-title">30A Home Automation with ESP32 </div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/HA1.png" alt="Project Image 1">
+                <img src="./img1/EMBERDED/HA2.png" alt="Project Image 2">
+            </div>
+            <div class="project-description">A high-power home automation system using ESP32, enabling remote control and monitoring of electrical appliances.</div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <div class="project-title">Motor Driver with DRV8833</div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/M.Driver1.png" alt="Project Image 3">
+                <img src="./img1/EMBERDED/M.Driver2.png" alt="Project Image 4">
+            </div>
+            <div class="project-description">A compact dual H-bridge motor driver for controlling DC motors efficiently, suitable for robotics and automation projects.</div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+            <div class="project-title">DC to DC Boost Converter</div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/DC to DC1.png " alt="Project Image 5">
+                <img src="./img1/EMBERDED/DC to DC2.png" alt="Project Image 6">
+            </div>
+            <div class="project-description">A voltage step-up converter using the XL6009 chip, designed to boost low voltage inputs to higher levels efficiently.</div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project">
+            <div class="project-title">USB to UART Converter</div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/USBTOUART1.png" alt="Project Image 7">
+                <img src="./img1/EMBERDED/USBTOUART2.png" alt="Project Image 8">
+            </div>
+            <div class="project-description">A reliable USB-to-serial converter for programming and debugging microcontrollers and embedded systems.</div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project">
+            <div class="project-title">DC Motor Speed Conroller</div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/CONTROLLER1.png" alt="Project Image 9">
+                <img src="./img1/EMBERDED/CONTROLLER2.png" alt="Project Image 10">
+            </div>
+            <div class="project-description">A simple and efficient PWM-based motor speed controller using the NE555 timer IC for precise speed adjustment.</div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project">
+            <div class="project-title">Servo Testing System</div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/Testing System 1.png" alt="Project Image 11">
+                <img src="./img1/EMBERDED/Testing System 2.png" alt="Project Image 12">
+            </div>
+            <div class="project-description">A compact servo motor tester using the NE555 timer to generate PWM signals for testing servo motors.</div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project">
+            <div class="project-title">Transformerless power supply</div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/Transformerless PS1.png" alt="Project Image 13">
+                <img src="./img1/EMBERDED/Transformerless PS2.png" alt="Project Image 14">
+            </div>
+            <div class="project-description">A lightweight and cost-effective power supply circuit using LM7805, designed for low-power electronic applications.</div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project">
+            <div class="project-title">12v Ac To Dc Converter</div>
+            <div class="image-gallery">
+                <img src="./img1/EMBERDED/actodc1.png" alt="Project Image 15">
+                <img src="./img1/EMBERDED/actodc2.png" alt="Project Image 16">
+            </div>
+            <div class="project-description">A power conversion circuit that efficiently converts 12V AC input to a stable DC output for powering electronic devices.</div>
+        </div>
+
+   </div>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const toggleSwitch = document.getElementById("darkModeToggle");
+        toggleSwitch.addEventListener("change", () => {
+            document.body.classList.toggle("light-mode");
+        });
+    </script>
+
+</body>
+</html>

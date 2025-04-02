@@ -1,0 +1,270 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <style>
+        
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #121212;
+            color: #f4f4f4;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        /* Project Image Gallery */
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Responsive: Stack images on small screens */
+        @media (max-width: 600px) {
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-gallery img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Project Details */
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            margin: 10px 0;
+            padding: 0 10px;
+        }
+
+        .project-meta {
+            font-size: 14px;
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .prev-btn {
+            background: #444;
+            color: white;
+        }
+
+        .next-btn {
+            background: #1E88E5;
+            color: white;
+        }
+
+        .prev-btn:hover {
+            background: #666;
+        }
+
+        .next-btn:hover {
+            background: #0b7dda;
+        }
+
+        /* Dark Mode Toggle Button */
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-switch label {
+            width: 50px;
+            height: 24px;
+            background: #2196F3;
+            border-radius: 20px;
+            position: relative;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .toggle-switch label::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 3px;
+            transition: 0.3s;
+        }
+
+        .toggle-switch input:checked + label {
+            background: #ddd;
+        }
+
+        .toggle-switch input:checked + label::before {
+            transform: translateX(26px);
+            background: #333;
+        }
+
+        /* Light Mode */
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #121212;
+        }
+
+        .light-mode .container {
+            background: white;
+            color: black;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .light-mode .prev-btn {
+            background: #ccc;
+            color: black;
+        }
+
+        .light-mode .next-btn {
+            background: #2196F3;
+        }
+
+        .light-mode .prev-btn:hover {
+            background: #999;
+        }
+
+    </style>
+</head>
+<body class="dark-mode">
+
+    <!-- Dark Mode Toggle Switch -->
+    <div class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle" checked>
+        <label for="darkModeToggle"></label>
+    </div>
+
+    <!-- Project Container -->
+    <div class="container">
+        
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="./img1/mini1.jpg" alt="Project Image 1">
+            <img src="./img1/mini2.jpg" alt="Project Image 2">
+            <img src="./img1/mini3.jpg" alt="Project Image 3">
+        </div>
+
+        <div class="project-title">Design & Development of a Mini Paddy Harvesting Machine</div>
+        <div class="project-description">
+        This project focused on designing and developing a compact, cost-effective, and efficient mini paddy harvesting machine to
+        assist small-scale farmers in improving their harvesting process. The goal was to reduce manual labor,
+        increase productivity, and enhance operational efficiency while ensuring affordability and ease of use.<br>
+        <br>
+        Key Features & Innovations<br>
+        <br>
+            ✅ Compact & Lightweight:  Designed for small-scale farms, making it easy to maneuver.<br>
+            
+            ✅ Efficient Cutting Mechanism: Incorporates a precision cutting system to reduce grain loss.<br>
+            
+            ✅ Cost-Effective Solution: Lower manufacturing cost compared to traditional harvesters.<br>
+            
+            ✅ User-Friendly Design Simple controls for easy operation by farmers with minimal training.<br>
+            
+            ✅ Increased Productivity: Speeds up the harvesting process, reducing time and labor costs.<br>
+            <br>
+            Technologies & Tools Used<br>
+            <br>
+            🔹 SolidWorks & AutoCAD  – For 3D modeling and mechanical design.<br>
+            
+            🔹 Arduino & Embedded Systems – For automation and control mechanisms.<br>
+            
+            🔹 Material Selection & Fabrication – Optimized for durability and efficiency.<br>
+            <br>
+            Project Outcome<br>
+            <br>
+            The mini paddy harvesting machine was successfully developed and tested, demonstrating a significant reduction in harvesting time and labor costs. Its lightweight and compact design made it accessible for small-scale farmers, addressing a key challenge in the agricultural sector. The project was highly recognized and awarded the Best Project Award with a Grade A for its innovation and impact.<br>
+            <br>
+            Key Achievements<br>
+            <br>
+            🏆 Best Project Award – Grade A<br>
+            
+            ⚙️ Proven Efficiency & Functionality in Field Tests<br>
+            
+            📈 Potential for Further Development & Commercialization <br>       </div>
+        <div class="project-meta"><strong>Date:</strong> March 10, 2025</div>
+        <div class="project-meta"><strong>Location:</strong> Colombo, Sri Lanka</div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev-btn" onclick="goToPreviousPage()">← Previous</button>
+            <button class="nav-btn next-btn" onclick="goToNextPage()">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const toggleSwitch = document.getElementById("darkModeToggle");
+        toggleSwitch.addEventListener("change", () => {
+            document.body.classList.toggle("light-mode");
+        });
+
+        // Navigation Functions (Update with actual URLs)
+        function goToPreviousPage() {
+            window.location.href = "./files/project1.html"; // Change to actual previous page URL
+        }
+
+        function goToNextPage() {
+            window.location.href = "./files/project3.html"; // Change to actual next page URL
+        }
+    </script>
+
+</body>
+</html>

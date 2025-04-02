@@ -1,0 +1,261 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <style>
+        
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #121212;
+            color: #f4f4f4;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        /* Project Image Gallery */
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Responsive: Stack images on small screens */
+        @media (max-width: 600px) {
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-gallery img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Project Details */
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .project-description {
+            font-size: 16px;
+            margin: 10px 0;
+            padding: 0 10px;
+        }
+
+        .project-meta {
+            font-size: 14px;
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .prev-btn {
+            background: #444;
+            color: white;
+        }
+
+        .next-btn {
+            background: #1E88E5;
+            color: white;
+        }
+
+        .prev-btn:hover {
+            background: #666;
+        }
+
+        .next-btn:hover {
+            background: #0b7dda;
+        }
+
+        /* Dark Mode Toggle Button */
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-switch label {
+            width: 50px;
+            height: 24px;
+            background: #2196F3;
+            border-radius: 20px;
+            position: relative;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .toggle-switch label::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 3px;
+            transition: 0.3s;
+        }
+
+        .toggle-switch input:checked + label {
+            background: #ddd;
+        }
+
+        .toggle-switch input:checked + label::before {
+            transform: translateX(26px);
+            background: #333;
+        }
+
+        /* Light Mode */
+        .light-mode {
+            background-color: #f4f4f4;
+            color: #121212;
+        }
+
+        .light-mode .container {
+            background: white;
+            color: black;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .light-mode .prev-btn {
+            background: #ccc;
+            color: black;
+        }
+
+        .light-mode .next-btn {
+            background: #2196F3;
+        }
+
+        .light-mode .prev-btn:hover {
+            background: #999;
+        }
+
+    </style>
+</head>
+<body class="dark-mode">
+
+    <!-- Dark Mode Toggle Switch -->
+    <div class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle" checked>
+        <label for="darkModeToggle"></label>
+    </div>
+
+    <!-- Project Container -->
+    <div class="container">
+        
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="./img1/securty1.jpg" alt="Project Image 1">
+            <img src="./img1/securty2.jpg" alt="Project Image 2">
+            <img src="./img1/securty3.jpg" alt="Project Image 3">
+        </div>
+
+        <div class="project-title">USB Electro Charge Controller</div>
+        <div class="project-description">
+            <br>
+            📌 Project Overview<br>
+            <br>
+This Smart Security System enhances campus safety using six ultrasonic sensors, six LED indicators, an ESP32-CAM module for live video streaming and human detection, and an OLED display for real-time status updates. The system detects unauthorized movements, visually indicates the affected zone, and streams live video for improved surveillance.
+<br>
+🛠️ Design & Development<br>
+<br>
+✅ 📡 Ultrasonic Sensors (x6) – Detects motion and unauthorized entry in different zones. <br>
+✅ 💡 LED Indicators (x6) – Each LED corresponds to a specific zone, lighting up when an intrusion is detected. <br>
+✅ 📷 ESP32-CAM Module – Provides live video streaming and human detection for real-time monitoring. <br>
+✅ 🖥️ OLED Display – Shows detection status, alert messages, and zone information in real time. <br>
+✅ ⚡ Embedded System – Powered by ESP32, handling sensor data, video processing, and display updates. <br>
+✅ 🔧 Enclosure & Hardware – Designed using SolidWorks, ensuring durability and weather resistance. <br>
+<br>
+🚀 Key Features<br>
+<br>
+🔹 Multi-Zone Monitoring – Six ultrasonic sensors cover multiple areas for enhanced detection. <br>
+🔹 Real-Time Alerts – LEDs indicate the affected zone upon unauthorized access. <br>
+🔹 Live Video Streaming – ESP32-CAM streams footage for remote surveillance. <br>
+🔹 Human Detection – AI-based detection filters human movement, reducing false alarms. <br>
+🔹 OLED Display Feedback – Displays zone detection, intruder alerts, and system status. <br>
+🔹 Scalable & Secure – Can be expanded with alarms, IoT connectivity, or mobile alerts. <br>
+<br>
+This advanced security system ensures a safe and controlled environment on campus, effectively
+preventing unauthorized access while providing live monitoring and real-time feedback.
+                   </div>
+        <div class="project-meta"><strong>Date:</strong> March 10, 2025</div>
+        <div class="project-meta"><strong>Location:</strong> Colombo, Sri Lanka</div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev-btn" onclick="goToPreviousPage()">← Previous</button>
+            <button class="nav-btn next-btn" onclick="goToNextPage()">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle Functionality
+        const toggleSwitch = document.getElementById("darkModeToggle");
+        toggleSwitch.addEventListener("change", () => {
+            document.body.classList.toggle("light-mode");
+        });
+
+        // Navigation Functions (Update with actual URLs)
+        function goToPreviousPage() {
+            window.location.href = "./files/project1.html"; // Change to actual previous page URL
+        }
+
+        function goToNextPage() {
+            window.location.href = "./files/project3.html"; // Change to actual next page URL
+        }
+    </script>
+
+</body>
+</html>
